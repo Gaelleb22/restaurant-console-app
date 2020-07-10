@@ -16,10 +16,8 @@ http://www.springframework.org/schema/util/spring-util.xsd">
 		</constructor-arg>
 	</bean>
 	
-	<bean id="fichier" class="java.lang.String"></bean>
-	
 	<bean id="platDaoFichier" class="dev.dao.PlatDaoFichier">
-		<constructor-arg name="fichierStockage" ref="fichier"></constructor-arg>
+		<constructor-arg name="fichierStockage" value="C:\Users\formation\Documents\workspace-spring-tool-suite-4-4.6.2.RELEASE\restaurant-console-app\fichierStockage.txt"></constructor-arg>
 	</bean>
 	
 	<bean id="platService2" class="dev.service.PlatServiceVersion2">
