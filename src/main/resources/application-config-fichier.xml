@@ -16,10 +16,14 @@ http://www.springframework.org/schema/util/spring-util.xsd">
 		</constructor-arg>
 	</bean>
 	
-	<bean id="platDaoMemoire" class="dev.dao.PlatDaoMemoire"/>
+	<bean id="fichier" class="java.lang.String"></bean>
+	
+	<bean id="platDaoFichier" class="dev.dao.PlatDaoFichier">
+		<constructor-arg name="fichierStockage" ref="fichier"></constructor-arg>
+	</bean>
 	
 	<bean id="platService2" class="dev.service.PlatServiceVersion2">
-		<constructor-arg name="dao" ref="platDaoMemoire"/>
+		<constructor-arg name="dao" ref="platDaoFichier"/>
 	</bean>
 	
 	<bean id="menu" class="dev.ihm.Menu">
