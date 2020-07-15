@@ -11,11 +11,12 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
+@Profile("platServ2")
 public class PlatServiceVersion2 implements IPlatService {
 
     private IPlatDao dao;
 
-    public PlatServiceVersion2(@Qualifier("platDaoMemoire") IPlatDao dao) {
+    public PlatServiceVersion2(IPlatDao dao) {
         this.dao = dao;
     }
 
