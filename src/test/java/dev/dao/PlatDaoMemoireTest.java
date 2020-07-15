@@ -25,8 +25,10 @@ class PlatDaoMemoireTest {
 
 	@Test
 	void ajouterPlatCasPassants() {
+
 		platDaoMemoire.ajouterPlat("galette", 1200);
 		List<Plat> resultat = platDaoMemoire.listerPlats();
-		assertThat(resultat).isNotEmpty();
+		assertThat(resultat).extracting(Plat::getNom).containsExactly("galette");
+		assertThat(resultat).extracting(Plat::getPrixEnCentimesEuros).containsExactly(1200);
 	}
 }
