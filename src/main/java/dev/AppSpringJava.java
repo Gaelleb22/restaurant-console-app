@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import dev.ihm.Menu;
+import dev.ihm.options.OptionAjouterPlat;
 import dev.config.AppConfig;
 
 public class AppSpringJava {
@@ -12,6 +13,7 @@ public class AppSpringJava {
 		
 		// Création du contexte Spring à partir d'une configuration Java
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+		
 		// récupération du bean Menu
 		Menu menu = context.getBean(Menu.class);
 		menu.afficher();
