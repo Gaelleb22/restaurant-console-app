@@ -16,6 +16,7 @@ import dev.entite.Plat;
 import dev.exception.PlatException;
 
 @SpringJUnitConfig(AppConfig.class)
+@ActiveProfiles({"platServ2", "platDoaMem"})
 public class PlatServiceVersion2IntegrationTest {
 	
 	@Autowired private PlatServiceVersion2 service2;
