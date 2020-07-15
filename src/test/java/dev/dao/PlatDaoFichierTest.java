@@ -16,7 +16,6 @@ import dev.entite.Plat;
 
 @SpringJUnitConfig(classes = {PlatDaoFichier.class})
 @TestPropertySource("classpath:test.properties")
-@ActiveProfiles({"platDoaFich"})
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 public class PlatDaoFichierTest {
 	
