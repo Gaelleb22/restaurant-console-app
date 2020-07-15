@@ -22,7 +22,7 @@ public class PlatDaoFichier implements IPlatDao {
 
     private String fichierStockage;
 
-    public PlatDaoFichier(@Value("${fichier}") String fichierStockage) {
+    public PlatDaoFichier(@Value("${fichier.stockage}") String fichierStockage) {
         this.fichierStockage = fichierStockage;
         if (!Files.exists(Paths.get(this.fichierStockage))) {
             try {
