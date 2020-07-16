@@ -27,12 +27,13 @@ public class PlatDaoJdbc implements IPlatDao{
 		
 		RowMapper<Plat> mapper = (ResultSet rs, int rowNum)->{
 			Plat p = new Plat();
+			p.setId(rs.getInt("id"));
 			p.setNom(rs.getString("nom"));
 			p.setPrixEnCentimesEuros(rs.getInt("prix"));
 			return p;
 		};
 		
-		String sql = "SELECT nom, prix FROM plat";
+		String sql = "SELECT * FROM plat";
 		List<Plat> plats = this.jdbcTemplate.query(sql, mapper);
 		return plats;
 	}
