@@ -12,7 +12,7 @@ import org.springframework.test.annotation.DirtiesContext;
 import dev.entite.Plat;
 
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
-public class IPlatDaoIntegrationTest {
+public abstract class IPlatDaoIntegrationTest {
 	
 	@Autowired 
 	private IPlatDao dao;
