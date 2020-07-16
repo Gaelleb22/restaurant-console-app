@@ -28,18 +28,18 @@ public class PlatDaoJdbc implements IPlatDao{
 		RowMapper<Plat> mapper = (ResultSet rs, int rowNum)->{
 			Plat p = new Plat();
 			p.setNom(rs.getString("nom"));
-			p.setPrixEnCentimesEuros(rs.getInt("prixEnCentimesEuros"));
+			p.setPrixEnCentimesEuros(rs.getInt("prix"));
 			return p;
 		};
 		
-		String sql = "SELECT nom, prixEnCentimesEuros FROM plat";
+		String sql = "SELECT nom, prix FROM plat";
 		List<Plat> plats = this.jdbcTemplate.query(sql, mapper);
 		return plats;
 	}
 
 	@Override
 	public void ajouterPlat(String nomPlat, Integer prixPlat) {
-		String sql = "INSERT INTO plat (nom, prixEnCentimesEuros) VALUE(?, ?)";
+		String sql = "INSERT INTO plat (nom, prix) VALUES(?, ?)";
 		jdbcTemplate.update(sql, nomPlat, prixPlat);
 		
 	}
