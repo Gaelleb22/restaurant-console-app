@@ -14,7 +14,7 @@ public class AppSpringJava {
 		// Création du contexte Spring à partir d'une configuration Java
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
 		
-		context.getEnvironment().setActiveProfiles("platServ2", "platDoaFich");
+		context.getEnvironment().setActiveProfiles("platServ2", "platDoaJdbc");
 		
 		context.register(AppConfig.class);
 		context.refresh();
